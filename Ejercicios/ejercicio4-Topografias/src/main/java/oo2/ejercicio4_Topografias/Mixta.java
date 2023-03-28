@@ -25,8 +25,25 @@ public class Mixta implements Topografia {
 		return this.children.stream().mapToDouble(c -> c.proporcionDeAgua()).sum() / 4;
 	}
 	
+	public double proporcionDeTierra() {
+		return 1 - this.proporcionDeAgua();
+	}
+	
+	public boolean sonIguales(Topografia otraTopografia) {
+		List<Topografia> otraChildren = otraTopografia.getChildren();
+		if(otraChildren != null) {
+			return otraChildren.equals(this.children);
+		}
+		return false;
+		
+	}
+
 	public List<Topografia> getChildren() {
 		return this.children;
 	}
-	
+		
+//	public Topografia getChildren(int pos) {
+//		return this.children.get(pos);
+//	}
+//	
 }

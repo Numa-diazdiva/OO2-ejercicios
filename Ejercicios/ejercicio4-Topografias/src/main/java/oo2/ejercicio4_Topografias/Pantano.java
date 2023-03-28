@@ -2,20 +2,16 @@ package oo2.ejercicio4_Topografias;
 
 import java.util.List;
 
-public class Tierra implements Topografia {
+public class Pantano implements Topografia {
 
-	private double cantAgua;
-
-	public Tierra() {
-		this.cantAgua = 0;
-	}
+	public Pantano() {}
 	
 	public double proporcionDeAgua() {
-		return this.cantAgua;
+		return 0.7;
 	}
 	
 	public double proporcionDeTierra() {
-		return 1 - this.proporcionDeAgua();
+		return 0.3;
 	}
 	
 	public boolean sonIguales(Topografia otraTopografia) {
