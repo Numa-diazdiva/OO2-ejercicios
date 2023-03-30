@@ -1,23 +1,48 @@
 package oo2.ejercicio4_Topografias;
 
 import java.util.List;
-
-// Siempre como interfaz?
-
-public interface Topografia {
-	// Solución menos transparente según GOF
-	public double proporcionDeAgua();
+// revisar transparencia de las soluciones según el GOF	
+// Tengo más que nada el comportamiento de las hojas, el composite hace override
+public abstract class Topografia {
 	
-	public double proporcionDeTierra();
 	
-	// Tiene sentido hacerla más transparente y definir un montón de cosas en clase abstracta?
-	// herencia que no se quiere luego
+	/*
+	 * Devuelve la proporción de agua del terreno
+	 * */
+	public abstract double proporcionDeAgua();
 	
-	// Ver referencias a padres que dicen ser útiles.
+	// quzás en algún momento tengo un terreno que tiene otras proporciones locas y me conviene no implementar esto acá
+	/*
+	 * Devuelve la proporción de tierra del terreno
+	 * */
+	public abstract double proporcionDeTierra();
 	
-	public boolean sonIguales(Topografia otraTopografia);
+	/*
+	 * Sobreescribe el método equals de Object para poder comparar Topografías según su composición
+	 * */
+	public boolean equals(Object o) {
+		return this.equals( (Topografia) o);
+	}
 	
-	// Se me ocurre esto para no preguntar por las clases, aunque las hojas no lo requieren
-	public List<Topografia> getChildren();
+	/*
+	 * Método específico de la Topografía para determinar su igualdad con otra topografía
+	 * Se hereda por defecto el cálculo que hacen las hojas
+	 * */
+	public boolean equals(Topografia otraTopografia) {
+		return this.proporcionDeAgua() == otraTopografia.proporcionDeAgua();
+	}
+	
+	/*
+	 * Método para comparar una Topografía con una Topografía mixta o compuesta
+	 * Se hereda por defecto el cálculo que hacen las hojas
+	 * */
+	public boolean compararConMixta(Mixta otraTopografia) {
+		return false;
+	}
+	
+	
+	public List<Topografia> getChildren() {
+		return null;
+	}
 	
 }

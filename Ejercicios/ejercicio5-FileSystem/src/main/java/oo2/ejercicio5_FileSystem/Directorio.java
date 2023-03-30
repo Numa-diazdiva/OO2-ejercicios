@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
+// Para preguntar: cuando le filtro los null crashea el test
 public class Directorio extends FileSystemComponent {
 
 	private List<FileSystemComponent> contenido;

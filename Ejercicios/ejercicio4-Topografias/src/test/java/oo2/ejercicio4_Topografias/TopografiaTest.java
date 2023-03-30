@@ -3,7 +3,6 @@ package oo2.ejercicio4_Topografias;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import java.util.List;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -48,15 +47,13 @@ public class TopografiaTest {
 		assertEquals(0.4375, terreno.proporcionDeAgua());
 	}
 	
-	// Por ahora el equals de la lista chequea objetos idénticos
 	@Test
 	void testIgualdadOK() {
 		Topografia mixta1 = new Mixta(hojaAgua, new Agua(), new Tierra(), new Agua());
 		this.terreno = new Mixta(mixta1, hojaTierra, hojaAgua, new Agua());
 		Topografia mixta2 = new Mixta(hojaAgua, new Agua(), new Tierra(), new Agua());
-		List<Topografia> mixta3 = terreno.getChildren();
-		Topografia otroTerreno = new Mixta(mixta3.get(0), mixta3.get(1), mixta3.get(2), mixta3.get(3));
-		assertTrue(this.terreno.sonIguales(otroTerreno));
+		Topografia otroTerreno = new Mixta(mixta2, new Tierra(), new Agua(), new Agua());
+		assertTrue(this.terreno.equals(otroTerreno));
 	}
 	
 	
