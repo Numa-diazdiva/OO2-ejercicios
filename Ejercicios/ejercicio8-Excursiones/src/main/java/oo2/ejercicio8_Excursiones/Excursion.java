@@ -1,4 +1,4 @@
-package oo2.ejercicio7_Excursiones;
+package oo2.ejercicio8_Excursiones;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -27,43 +27,49 @@ public class Excursion {
 		this.costo = costo;
 	}
 
-	// Interactuar con el estado
+	// ---------- Interactuar con el estado
 	public void inscribirUsuario(Usuario usr) {
 		this.estado.inscribirUsuario(usr, this);
 	}
 	
+	// Preguntar éste, si se pisa con la noción de provisorios
 	public List<Usuario> usuariosInscriptos() {
 		return this.estado.usuariosInscriptos(this);
 	}
-	
-	public List<Usuario> inscriptosProvisorios() {
-		return this.estado.inscriptosProvisorios(this);
+
+	// Ésto no conviene delegarlo al estado. No tiene sentido
+	public List<Usuario> listaDeEspera() {
+		return this.listaDeEspera;
 	}
 	
-	public List<Usuario> listaDeEspera() {
-		return this.estado.listaDeEspera(this);
-		//Acá lo delego al state pero capaz podría ser también: return this.listaDeEspera();
+	// Ésto ya sí, porque depende de él
+	public List<Usuario> inscriptosProvisorios() {
+		return this.estado.inscriptosProvisorios(this);
 	}
 	
 	public String obtenerInformacion() {
 		return this.estado.obtenerInformacion(this);
 	}
 	
-	
-	// Mensajes para que llamen los estados
-	public void inscribir(Usuario usr) {
+	/*
+	 * 				--------- Mensajes para que llamen los estados------------
+	 * Nota de clase: los puedo dejar con alcance paquete, para que no se puedan llamar
+	 * desde otros lugares de la aplicación -más restringido que público, pero lo suficientemente
+	 * permisivo como para que lo use el State-
+	 * */
+	void inscribir(Usuario usr) {
 		this.usuarios.add(usr);
 	}
 	
-	public void añadirAEspera(Usuario usr) {
+	void añadirAEspera(Usuario usr) {
 		this.listaDeEspera.add(usr);
 	}
 	
-	public void setEstado(EstadoExcursion estado) {
+	void setEstado(EstadoExcursion estado) {
 		this.estado = estado;
 	}
 	
-	// No sabía si ponerlo acá o en el estado, pero se me hace que puede ser una funcionalidad útil para la clase y que puede
+	// Puede ser una funcionalidad útil para la clase y que puede
 	// disminuir el acoplamiento el que esté acá
 	// podría devolver una lista también
 	public String getEmails() {
@@ -116,6 +122,5 @@ public class Excursion {
 	public String getNombre() {
 		return nombre;
 	}
-
 		
 }

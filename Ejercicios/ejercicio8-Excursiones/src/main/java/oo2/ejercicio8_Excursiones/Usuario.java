@@ -1,4 +1,4 @@
-package oo2.ejercicio7_Excursiones;
+package oo2.ejercicio8_Excursiones;
 
 public class Usuario {
 

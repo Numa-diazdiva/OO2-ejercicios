@@ -1,4 +1,4 @@
-package oo2.ejercicio7_Excursiones;
+package oo2.ejercicio8_Excursiones;
 
 import java.util.List;
 
@@ -21,11 +21,6 @@ public class Confirmada extends EstadoExcursion {
 	public List<Usuario> inscriptosProvisorios(Excursion context) {
 		return null;
 	}
-
-	@Override
-	public List<Usuario> listaDeEspera(Excursion context) {
-		return null;
-	}
 	
 	@Override
 	public String obtenerInformacion(Excursion context) {
@@ -35,14 +30,3 @@ public class Confirmada extends EstadoExcursion {
 	}
 
 }
-
-
-
-// cupo min = cupo max
-
-//if(context.getCupoMaximo() == context.getCantInscriptos()) {
-//	context.setEstado(new Completa());
-//	context.inscribirUsuario(usr);
-//} else {
-//	context.inscribir(usr);
-//}
