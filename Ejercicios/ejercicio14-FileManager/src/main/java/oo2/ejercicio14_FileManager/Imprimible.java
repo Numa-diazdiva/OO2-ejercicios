@@ -20,10 +20,9 @@ public interface Imprimible {
 	/*
 	 * Para éste ejercicio no hace falta tener en cuenta la forma en que se encadenan
 	 * los decorators -ese es otro problema-.
-	 * */
-	
-//	public void setArchivo(FileOO2 archivo);
-//	
-//	public boolean esArchivo();
 
+		public void setArchivo(FileOO2 archivo);
+		
+		public boolean esArchivo();
+	*/
 }

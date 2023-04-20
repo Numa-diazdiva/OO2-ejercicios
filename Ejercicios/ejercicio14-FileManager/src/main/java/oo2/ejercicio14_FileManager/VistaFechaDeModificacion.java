@@ -8,8 +8,9 @@ public class VistaFechaDeModificacion extends Vista {
 	
 	public VistaFechaDeModificacion() {}
 	
+	@Override
 	public String prettyPrint() {
-		return "| Fecha de modificación: " + this.printFechaDeModificacion() + this.getComponente().prettyPrint();
+		return " | Fecha de modificación: " + this.printFechaDeModificacion() + super.prettyPrint();
 	}
 	
 }

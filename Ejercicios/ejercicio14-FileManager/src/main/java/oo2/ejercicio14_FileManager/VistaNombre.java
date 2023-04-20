@@ -10,7 +10,7 @@ public class VistaNombre extends Vista{
 
 	@Override
 	public String prettyPrint() {
-		return "| Nombre: " + this.getNombre() + this.getComponente().prettyPrint(); 
+		return " | Nombre: " + this.getNombre() + super.prettyPrint(); 
 	}
 	
 }

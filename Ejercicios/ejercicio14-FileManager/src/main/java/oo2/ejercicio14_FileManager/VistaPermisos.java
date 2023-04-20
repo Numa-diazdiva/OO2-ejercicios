@@ -8,8 +8,9 @@ public class VistaPermisos extends Vista {
 	
 	public VistaPermisos() {}
 	
+	@Override
 	public String prettyPrint() {
-		return "| Permisos: " + this.getPermisos() + this.getComponente().prettyPrint();
+		return " | Permisos: " + this.getPermisos() + super.prettyPrint();
 	}
 	
 }

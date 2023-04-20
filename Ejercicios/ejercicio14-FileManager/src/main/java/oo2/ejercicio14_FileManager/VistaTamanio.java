@@ -10,7 +10,7 @@ public class VistaTamanio extends Vista {
 
 	@Override
 	public String prettyPrint() {
-		return "| Tamanio: " + this.getTamanio() + this.getComponente().prettyPrint(); 
+		return " | Tamanio: " + this.getTamanio() + super.prettyPrint(); 
 	}
 	
 }

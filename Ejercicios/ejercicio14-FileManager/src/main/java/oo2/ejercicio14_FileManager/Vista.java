@@ -18,7 +18,9 @@ public abstract class Vista implements Imprimible {
 		return this.componente;
 	}
 	
-	public abstract String prettyPrint();
+	public String prettyPrint() {
+		return this.componente.prettyPrint();
+	}
 	
 	public String getNombre() {
 		return this.componente.getNombre();

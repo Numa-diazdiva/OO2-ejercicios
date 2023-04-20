@@ -71,7 +71,8 @@ public class FileOO2 implements Imprimible {
 	}
 	
 	public String prettyPrint() {
-		return "| extensión: " + this.extension;
+		// No hace nada, los decorators van a proveer esta funcionalidad
+		return "";
 	}
 	
 //	public boolean esArchivo() {
