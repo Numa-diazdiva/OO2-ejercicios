@@ -44,18 +44,18 @@ public abstract class Vista implements Imprimible {
 		return this.componente.getPermisos();
 	}
 	
-	public boolean esArchivo() {
-		return false;
-	}
+//	public boolean esArchivo() {
+//		return false;
+//	}
 	
-	public void setArchivo(FileOO2 archivo) {
-		// Agrego el archivo a este componente si es el último (la vista aún no tiene nada seteado o es el último decorator)
-		if (this.componente == null){
-			this.setComponente(archivo);
-		} else {
-			if(this.componente.esArchivo())
-			this.componente.setArchivo(archivo);
-		}
-	}
+//	public void setArchivo(FileOO2 archivo) {
+//		// Agrego el archivo a este componente si es el último (la vista aún no tiene nada seteado o es el último decorator)
+//		if (this.componente == null){
+//			this.setComponente(archivo);
+//		} else {
+//			if(this.componente.esArchivo())
+//			this.componente.setArchivo(archivo);
+//		}
+//	}
 	
 }

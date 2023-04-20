@@ -74,10 +74,10 @@ public class FileOO2 implements Imprimible {
 		return "| extensión: " + this.extension;
 	}
 	
-	public boolean esArchivo() {
-		return true;
-	}
-	
-	public void setArchivo(FileOO2 archivo) {}
+//	public boolean esArchivo() {
+//		return true;
+//	}
+//	
+//	public void setArchivo(FileOO2 archivo) {}
 	
 }

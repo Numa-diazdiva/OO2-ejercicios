@@ -17,11 +17,7 @@ public class FileManager {
 		this.archivos.add(archivo);
 	}
 	
-	public String imprimirArchivo(FileOO2 archivo) {
-		this.vista.setArchivo(archivo);
-		return this.vista.prettyPrint();
-	}
-	
+	// No se tiene en cuenta en esta instancia de ejercicio
 	public void agregarVistaAlPrincipio(Vista vista) {
 		vista.setComponente(this.vista);
 		this.setVista(vista);
@@ -34,5 +30,14 @@ public class FileManager {
 	public void resetVista() {
 		this.vista = new VistaNombre();
 	}
+	
+	/*
+	 * Ésto es otro problema
+	 * */
+	
+//	public String imprimirArchivo(FileOO2 archivo) {
+//		this.vista.setArchivo(archivo);
+//		return this.vista.prettyPrint();
+//	}
 	
 }

@@ -53,12 +53,17 @@ public class Pelicula {
 		this.peliculasSimilares.add(pelicula);
 	}
 	
+	/*
+	 * Acá lo ideal debería ser comparar por un ID (si fuera una situación real)
+	 * Puede haber películas con el mismo título
+	 * */
 	public boolean esIgualA(String titulo) {
-		return this.titulo == titulo;
+		return this.titulo.equals(titulo);
 	}
 	
 	public boolean esSimilarA(Pelicula pelicula) {
-		return this.peliculasSimilares.stream().anyMatch(p -> p.esIgualA(pelicula.getTitulo()));
+		// Asumimos que tenemos la misma instancia en este caso
+		return this.peliculasSimilares.stream().anyMatch(p -> p.equals(pelicula));
 	}
 	
 }
