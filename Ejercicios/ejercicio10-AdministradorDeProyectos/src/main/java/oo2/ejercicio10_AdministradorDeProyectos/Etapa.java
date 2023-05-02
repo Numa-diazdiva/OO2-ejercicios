@@ -8,12 +8,15 @@ public abstract class Etapa {
 		this.nombreEtapa = nombreEtapa;
 	}
 	
-	// abstract ?
+	// Si se repite el vacío está bueno que quede así y que las subclases que hacen algo hagan Override
 	public void aprobarEtapa(Proyecto proyecto) {
 		
 	}
 	
-	// Hago esta especie de template, o dejo como abstracto?
+	/*
+		Sirve el template, pero por más que no haga nada por el false del margenValido,
+		pisar en cancelado y confirmado para evitar errores a futuro
+	 */
 	public void actualizarMargenDeGanancia(Proyecto proyecto, double margen) {
 		if(this.margenValido(margen)) {
 			proyecto.setMargenDeGanancia(margen);

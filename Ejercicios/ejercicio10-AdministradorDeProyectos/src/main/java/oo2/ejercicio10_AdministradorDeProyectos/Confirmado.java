@@ -5,4 +5,9 @@ public class Confirmado extends Etapa {
 	public Confirmado() {
 		super("Confirmado");
 	}
+	
+	@Override
+	public void actualizarMargenDeGanancia(Proyecto proyecto, double margen) {
+		
+	}
 }

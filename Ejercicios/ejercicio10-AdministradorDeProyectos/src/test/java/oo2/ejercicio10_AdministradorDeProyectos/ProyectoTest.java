@@ -1,6 +1,7 @@
 package oo2.ejercicio10_AdministradorDeProyectos;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.time.LocalDate;
 
@@ -34,9 +35,22 @@ public class ProyectoTest {
 	}
 	
 	@Test
-	void testEtapaConstruccionAprobar() {
+	void testEtapaConstruccionAprobarOK() {
 		proyecto.aprobarEtapa();
 		assertEquals("En evaluación", proyecto.getEtapaActual().getNombreEtapa());
+	}
+	
+	@Test
+	void testEtapaConstruccionAprobarFail() {
+		Proyecto proyecto2 = new Proyecto(LocalDate.of(2023, 7, 1),	LocalDate.of(2023, 7, 10), "asd", 3, 0, 5);
+		try {
+			proyecto2.aprobarEtapa();
+		} catch (Exception e){
+			assertEquals(e.getMessage(), "Error: El proyecto tiene un precio de 0.");
+		}
+		// Ésta es la forma de testear excepciones. Recordar que hay que pasar una lambda porque recibe un bloque de código. De
+		// otra forma estaría recibiendo la excepción porque el método se ejecuta antes.
+		assertThrows(RuntimeException.class, () -> proyecto2.aprobarEtapa());
 	}
 	
 	@Test
