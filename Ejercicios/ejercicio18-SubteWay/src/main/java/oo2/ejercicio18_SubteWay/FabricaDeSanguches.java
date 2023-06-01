@@ -2,18 +2,22 @@ package oo2.ejercicio18_SubteWay;
 
 public abstract class FabricaDeSanguches {
 
-	public abstract void agregarPan(Sanguche sanguche);
-	public abstract void agregarAderezo(Sanguche sanguche);
-	public abstract void agregarPrincipal(Sanguche sanguche);
-	public abstract void agregarAdicional(Sanguche sanguche);
+	private Sanguche nuevoSanguche;
+	
+	public abstract void agregarPan();
+	public abstract void agregarAderezo();
+	public abstract void agregarPrincipal();
+	public abstract void agregarAdicional();
 
-	public Sanguche fabricarSanguche() {
-		Sanguche nuevoSanguche = new Sanguche();
-		this.agregarPan(nuevoSanguche);
-		this.agregarAderezo(nuevoSanguche);
-		this.agregarPrincipal(nuevoSanguche);
-		this.agregarAdicional(nuevoSanguche);
-		return nuevoSanguche;
+	public void iniciarCreacion() {
+		this.nuevoSanguche = new Sanguche();
 	}
 	
+	public Sanguche obtenerProducto() {
+		return this.nuevoSanguche;
+	}
+	
+	protected Sanguche getSanguche() {
+		return this.nuevoSanguche;
+	}
 }
