@@ -1,3 +1,4 @@
 /Ejercicios/.metadata
-.class
-.drawio.bkp
+*.class
+/Diagramas/.*
+*.drawio.dtmp
